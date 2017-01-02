@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import os
 import shutil
 from PIL import Image
-import pdb
 
 output_dir = "output_ordered"
 path = "/home/joakim/projects/VideoLabeler/videolabeler/videolabeler/output/Carib-020516-090-FHD"
