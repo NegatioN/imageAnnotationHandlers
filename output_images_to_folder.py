@@ -4,7 +4,7 @@ import shutil
 from PIL import Image
 
 output_dir = "output_ordered"
-path = "."
+path = "/home/joakim/projects/VideoLabeler/videolabeler/videolabeler/output/pondo9"
 filenames = os.listdir(path)
 imagenet_size = 224
 do_crop = True

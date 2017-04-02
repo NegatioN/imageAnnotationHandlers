@@ -22,13 +22,13 @@ def calc_index(image_list, percentage):
     return int((float(len(image_list)) / 100)*percentage)
 
 
-train_percent = 70
-test_percent = 20
+train_percent = 80
+test_percent = 0
 valid_percent = 100-(train_percent+test_percent)
 
 
-input_path = "output_ordered"
-output_path = 'test_train'
+input_path = "/home/joakim/projects/KaggleDogsCatsRedux/data/train"
+output_path = '/home/joakim/projects/KaggleDogsCatsRedux/data/train'
 output_types = filenames = os.listdir(input_path) #Needs fancy magic if data is not structured.
 
 image_names_types = {}
@@ -41,10 +41,10 @@ print(image_names_types)
 for image_type, image_list in image_names_types.items():
     print(image_list)
     train_num = calc_index(image_list, train_percent)
-    test_num = calc_index(image_list, test_percent) + train_num
+    #test_num = calc_index(image_list, test_percent) + train_num
     train_files = image_list[:train_num]
-    test_files = image_list[train_num:test_num]
-    valid_files = image_list[test_num:]
+    #test_files = image_list[train_num:test_num]
+    valid_files = image_list[train_num:]
     copy_files(image_type, 'train', train_files)
-    copy_files(image_type, 'test', test_files)
+    #copy_files(image_type, 'test', test_files)
     copy_files(image_type, 'valid', valid_files)
